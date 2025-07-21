@@ -21,11 +21,12 @@ Welcome to your curated library of **TypeScript design patterns**—built with m
 | `abstract-factory.ts`     | Create related objects without specifying classes                       |
 | `adapter.ts`              | Bridge interfaces to ensure compatibility                               |
 | `builder.ts`              | Construct complex objects step by step                                  |
-| `dependency-injection.ts` | Decouple objects through external injections                           |
+| `dependency-injection.ts` | Decouple objects through external injections                            |
 | `facade.ts`               | Provide a simplified interface to complex subsystems                    |
 | `singleton.ts`            | Limit instantiation to a single shared object                           |
-| `strategy.ts`             | Swap out algorithms dynamically                                          |
+| `strategy.ts`             | Swap out algorithms dynamically                                         |
 | `visibility.ts`           | Demonstrate access modifiers and encapsulation                          |
+| `promise.ts`              | Demonstrate promise pattern to handle asynchronus operation.            |
 
 ---
 
