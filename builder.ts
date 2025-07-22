@@ -44,9 +44,9 @@ class UserBuilder{
     }
 }
 //Usage
-const userB = new UserBuilder()
-.setFirstName("Sourav")
+const formData = new UserBuilder()
+.setFirstName("John")
 .setLastName("Paul")
 .setEmail("paul412@gmail.com")
 .setAdmin(true).build()
-console.log(userB)
+console.log(`User records ${formData}`);

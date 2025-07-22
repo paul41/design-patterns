@@ -2,41 +2,43 @@
 // Sometimes, the socket and device plug doesn’t fit. To make sure it works, we will use an adapter. 
 // That’s exactly what we are going to do in the adapter pattern.
 // It is a process of wrapping the incompatible object in an adapter to make it compatible with another class.
-interface IError{
-    serialize():string;
-}
-class CustomError implements IError{
-    message: string;
-    constructor(message:string){
-        this.message = message;
-    }
-    serialize(): string {
-        return(this.message)
-    }
+
+// 🎯 Target Interface: Common structure used across the application
+interface IError {
+  serialize(): string;
 }
 
-// Now, we are using this CustomError class across our application. 
-// After some time, we need to change the method in the class due to some reason.
-export default class NewCustomError{
+// ✅ Legacy Implementation (originally used throughout the app)
+class CustomError implements IError {
+  constructor(private message: string) {}
 
-    message : string
-    
-    constructor(message : string){
-        this.message = message    
-    }
-
-    withInfo() {
-        return { message : this.message } 
-    }
+  serialize(): string {
+    return this.message;
+  }
 }
 
-class ErrorAdapter implements IError{
-    message:string;
-    constructor(message:string){
-        this.message = message
-    }
-    serialize(): string {
-        const e = new NewCustomError(this.message).withInfo()
-        return e.message
-    }
-};
+// 🆕 Updated Error Class with a new format
+class NewCustomError {
+  constructor(public message: string) {}
+
+  withInfo() {
+    return { message: this.message };
+  }
+}
+
+// 🔌 Adapter: Makes NewCustomError compatible with the IError interface
+class ErrorAdapter implements IError {
+  private adaptee: NewCustomError;
+
+  constructor(message: string) {
+    this.adaptee = new NewCustomError(message);
+  }
+
+  serialize(): string {
+    return this.adaptee.withInfo().message;
+  }
+}
+
+// 🧪 Usage
+const error: IError = new ErrorAdapter("Database connection failed!");
+console.log(error.serialize()); // Outputs: "Database connection failed!"
