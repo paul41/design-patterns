@@ -49,4 +49,4 @@ const formData = new UserBuilder()
 .setLastName("Paul")
 .setEmail("paul412@gmail.com")
 .setAdmin(true).build()
-console.log(`User records ${formData}`);
+console.log(`User records ${JSON.stringify(formData)}`);
