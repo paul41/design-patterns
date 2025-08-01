@@ -27,6 +27,9 @@ Welcome to your curated library of **TypeScript design patterns**—built with m
 | `strategy.ts`             | Swap out algorithms dynamically                                         |
 | `visibility.ts`           | Demonstrate access modifiers and encapsulation                          |
 | `promise.ts`              | Demonstrate promise pattern to handle asynchronus operation.            |
+| `flyweight.ts`            | Demonstrate memory optimization by sharing common data between objects. |
+| `proxy.ts`                | Demonstrate a placeholder for another object to control & access to it. |
+|-----------------------------------------------------------------------------------------------------|
 
 ---
 

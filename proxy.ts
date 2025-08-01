@@ -1,4 +1,4 @@
-//Proxy pattern provides a surrogate or placeholder for another object to control access to it.
+//Proxy pattern provides a surrogate or placeholder for another object to control and access to it.
 //It can be used while lazy loading objects,access control etc.
 //In this example, we will fetch sensitive user data from a remote API only when needed.
 
