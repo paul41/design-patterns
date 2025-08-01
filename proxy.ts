@@ -11,7 +11,7 @@ interface UserI {
 class UserService {
   getUserData(id: number): UserI {
     console.log(`Fetching user data for user ${id}`);
-    return { id, name: "Sourav", role: "Admin" };
+    return { id, name: "Paul", role: "Admin" };
   }
 }
 
